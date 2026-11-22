@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Reprodução da análise de firmware (Etapas 2 e 3). Requer: esptool (pip install esptool), strings, sha256sum.
+
 set -euo pipefail
 cd "$(dirname "$0")"
 echo "== Integridade da evidência original"; (cd original && sha256sum -c ../hashes.txt)

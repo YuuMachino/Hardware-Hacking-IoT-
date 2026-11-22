@@ -1,15 +1,3 @@
-#!/usr/bin/env python3
-"""
-Laboratório de rede NexaSense (100% local, 127.0.0.1) - Etapas 5 e 6.
-
-Como o ESP32 só existe dentro do simulador Wokwi, este script REPRODUZ no
-laboratório o comportamento de rede descrito no firmware (mesmo broker TCP/1883,
-mesmos tópicos, mesmo formato de payload e mesmas credenciais FICTÍCIAS) para:
-  1) capturar o tráfego em pcap (scapy) e provar que é texto claro;
-  2) mostrar que um observador SEM credenciais lê a telemetria (sem confidencialidade);
-  3) mostrar que um comando forjado em ..../cmd é aceito pelo dispositivo (sem autenticação de origem).
-Nada sai de 127.0.0.1.  Uso: python3 lab_mqtt.py
-"""
 import asyncio, threading, time, json, re, sys
 import paho.mqtt.client as mqtt
 from scapy.all import sniff, wrpcap, TCP, Raw
@@ -17,14 +5,14 @@ from amqtt.broker import Broker
 
 HOST, PORT = "127.0.0.1", 1883
 DEVICE_ID, FW = "nexasense-0001", "0.3.1-lab"
-MQTT_USER, MQTT_PASS = "nexasense", "Nexa@2024-lab"      # FICTÍCIAS (iguais ao firmware)
+MQTT_USER, MQTT_PASS = "nexasense", "Nexa@2024-lab"      
 API_TOKEN, MAC = "nx_lab_token_FAKE_123456", "24:0a:c4:00:01:10"
 T_DATA, T_CMD = f"nexahome/lab/{DEVICE_ID}/telemetry", f"nexahome/lab/{DEVICE_ID}/cmd"
 log = []
 def say(m):
     line = f"[{time.strftime('%H:%M:%S')}] {m}"; print(line); log.append(line)
 
-# ---------------- broker local ----------------
+
 def run_broker():
     cfg = {"listeners": {"default": {"type": "tcp", "bind": f"{HOST}:{PORT}"}},
            "plugins": {"amqtt.plugins.authentication.AnonymousAuthPlugin": {"allow_anonymous": True}}}
@@ -32,7 +20,7 @@ def run_broker():
     b = Broker(cfg, loop=loop)
     loop.run_until_complete(b.start()); loop.run_forever()
 
-# ---------------- "dispositivo" ----------------
+
 led = {"state": "off"}
 def device():
     c = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, client_id=f"{DEVICE_ID}-lab")

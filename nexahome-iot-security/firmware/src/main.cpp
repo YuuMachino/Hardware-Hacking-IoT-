@@ -1,18 +1,13 @@
 #include <Arduino.h>
-/*
- * NexaSense - firmware EDUCACIONAL (protótipo v0.3-lab)
- * Projeto: "Do Protótipo ao Produto Seguro" - Hardware Hacking IoT
- *
- * ATENÇÃO: este firmware contém fragilidades INTENCIONAIS para fins
+/*OBS: este firmware contém fragilidades INTENCIONAIS para fins
  * didáticos (credenciais fictícias fixas, MQTT sem TLS, OTA sem assinatura,
  * console de depuração aberto). Todos os valores sensíveis são FICTÍCIOS.
- * Uso exclusivo em laboratório / simulador (Wokwi).
+ * Uso exclusivo em laboratório (Wokwi).
  */
 #include <WiFi.h>
 #include <PubSubClient.h>
 #include <DHT.h>
 
-// ---------- Configuração (protótipo: valores fixos no código) ----------
 #define FW_VERSION      "0.3.1-lab"
 #define DEVICE_ID       "nexasense-0001"          // mesmo ID em todas as unidades do lote
 #define WIFI_SSID       "Wokwi-GUEST"
@@ -31,7 +26,7 @@
 #define LED_PIN   2
 
 DHT dht(DHT_PIN, DHT_TYPE);
-WiFiClient netClient;                 // WiFiClient puro = sem TLS
+WiFiClient netClient;               
 PubSubClient mqtt(netClient);
 unsigned long lastPublish = 0;
 
@@ -67,7 +62,6 @@ void onMqtt(char* topic, byte* payload, unsigned int len) {
   String msg;
   for (unsigned int i = 0; i < len; i++) msg += (char)payload[i];
   Serial.printf("[MQTT] cmd em %s: %s\n", topic, msg.c_str());
-  // Comandos aceitos sem nenhuma autenticacao de origem / assinatura
   if (msg == "led_on")  digitalWrite(LED_PIN, HIGH);
   if (msg == "led_off") digitalWrite(LED_PIN, LOW);
   if (msg == "reboot")  ESP.restart();

@@ -1,0 +1,7 @@
+# Bytes de aplicação MQTT extraídos de network/evidence/mqtt-plaintext.pcap (valores FICTÍCIOS de laboratório)
+CONNECT: b'\x10&\x00\x04MQTT\x04\x02\x00<\x00\x1aobservador-sem-credenciais'
+CONNECT: b'\x108\x00\x04MQTT\x04\xc2\x00<\x00\x12nexasense-0001-lab\x00\tnexasense\x00\rNexa@2024-lab'
+PUBLISH: b'0\xa3\x01\x00%nexahome/lab/nexasense-0001/telemetry{"id":"nexasense-0001","fw":"0.3.1-lab","mac":"24:0a:c4:00:01:10","temp":27.5,"hum":61.0,"token":"nx_lab_token_FAKE_123456"}'
+PUBLISH: b'0\xa3\x01\x00%nexahome/lab/nexasense-0001/telemetry{"id":"nexasense-0001","fw":"0.3.1-lab","mac":"24:0a:c4:00:01:10","temp":27.6,"hum":60.8,"token":"nx_lab_token_FAKE_123456"}'
+PUBLISH: b'0\xa3\x01\x00%nexahome/lab/nexasense-0001/telemetry{"id":"nexasense-0001","fw":"0.3.1-lab","mac":"24:0a:c4:00:01:10","temp":27.5,"hum":61.1,"token":"nx_lab_token_FAKE_123456"}'
+PUBLISH: b"0'\x00\x1fnexahome/lab/nexasense-0001/cmdled_on"

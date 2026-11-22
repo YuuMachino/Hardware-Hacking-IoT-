@@ -1,0 +1,48 @@
+esptool v5.6.0
+Image size: 999088 bytes
+Detected image type: ESP32
+
+ESP32 Image Header
+==================
+Image version: 1
+Entry point: 0x400819f4
+Segments: 6
+Flash size: 4MB
+Flash freq: 40m
+Flash mode: DIO
+
+ESP32 Extended Image Header
+===========================
+WP pin: 0xee (disabled)
+Flash pins drive settings: clk_drv: 0x0, q_drv: 0x0, d_drv: 0x0, cs0_drv: 0x0, hd_drv: 0x0, wp_drv: 0x0
+Chip ID: 0 (ESP32)
+Minimal chip revision: v0.0, (legacy min_rev = 0)
+Maximal chip revision: v655.35
+
+Segments Information
+====================
+Segment   Length   Load addr   File offs  Memory types
+-------  -------  ----------  ----------  ------------
+      0  0x2337c  0x3f400020  0x00000018  DROM
+      1  0x060d0  0x3ffbdb60  0x0002339c  BYTE_ACCESSIBLE, DRAM
+      2  0x06b9c  0x40080000  0x00029474  IRAM
+      3  0xb8878  0x400d0020  0x00030018  IROM
+      4  0x0b5b4  0x40086b9c  0x000e8898  IRAM
+      5  0x00028  0x50000200  0x000f3e54  RTC_DATA
+
+ESP32 Image Footer
+==================
+Checksum: 0x88 (valid)
+Validation hash: 89f249b474aa10adf50b8b402392a15209864a9bffa9e19d1d78880b91a698bb (valid)
+
+Application Information
+=======================
+Project name: arduino-lib-builder
+App version: 1088015
+Compile time: Nov 18 2026 19:15:47
+ELF file SHA256: 7a3c818e94da7b2113634ab1d96127f88b2f6fa49168014c576a62fadb2d100b
+ESP-IDF: v6.1.1-dirty
+Minimal eFuse block revision: 0.0
+Maximal eFuse block revision: 0.99
+MMU page size: 64 KB
+Secure version: 0

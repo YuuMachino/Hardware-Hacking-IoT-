@@ -1,0 +1,24 @@
+135:[MQTT] cmd em %s: %s
+138:http://updates.nexahome.example/nexasense/fw.bin
+139:[OTA] baixando %s e gravando (sem validar)
+140:=== NexaSense boot ===
+141:nexasense-0001
+143:[DBG] fw=%s device=%s
+144:[DBG] chip=%s rev=%d cores=%d flash=%uKB
+145:Wokwi-GUEST
+146:[DBG] wifi ssid=%s pass='%s'
+147:Nexa@2024-lab
+148:nexasense
+149:broker.hivemq.com
+150:[DBG] mqtt %s:%d user=%s pass=%s
+151:nx_lab_token_FAKE_123456
+152:[DBG] api_token=%s
+153:[DBG] ota_url=%s
+154:[DBG] console de depuracao ativo: digite 'help'
+157:[MQTT] conectando %s:%d ...
+158:[MQTT] conectado (TCP/1883, sem TLS)
+159:nexahome/lab/nexasense-0001/cmd
+160:[MQTT] falhou rc=%d, tentando de novo
+163:wifi=%s/%s mqtt=%s:%d %s/%s token=%s
+164:[OTA] buscaria %s (sem verificacao de assinatura)
+168:nexahome/lab/nexasense-0001/telemetry

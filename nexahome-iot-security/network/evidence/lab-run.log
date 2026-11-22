@@ -1,0 +1,14 @@
+[01:31:43] == Etapa 5: captura de tráfego em 127.0.0.1:1883 iniciada
+[01:31:43] OBSERVADOR (sem credenciais) leu nexahome/lab/nexasense-0001/telemetry: {"id":"nexasense-0001","fw":"0.3.1-lab","mac":"24:0a:c4:00:01:10","temp":27.5,"hum":61.0,"token":"nx_lab_token_FAKE_123456"}
+[01:31:44] OBSERVADOR (sem credenciais) leu nexahome/lab/nexasense-0001/telemetry: {"id":"nexasense-0001","fw":"0.3.1-lab","mac":"24:0a:c4:00:01:10","temp":27.6,"hum":60.8,"token":"nx_lab_token_FAKE_123456"}
+[01:31:45] OBSERVADOR (sem credenciais) leu nexahome/lab/nexasense-0001/telemetry: {"id":"nexasense-0001","fw":"0.3.1-lab","mac":"24:0a:c4:00:01:10","temp":27.5,"hum":61.1,"token":"nx_lab_token_FAKE_123456"}
+[01:31:47] == Etapa 6: observador sem credenciais publica comando forjado 'led_on'
+[01:31:47] DISPOSITIVO recebeu cmd 'led_on' em nexahome/lab/nexasense-0001/cmd (sem verificar origem)
+[01:31:47] OBSERVADOR (sem credenciais) leu nexahome/lab/nexasense-0001/cmd: led_on
+[01:31:48] Estado do LED do dispositivo após comando forjado: on
+[01:31:55] Pacotes capturados: 74; bytes de aplicação: 2588
+[01:31:55] Texto claro no pcap -> usuário MQTT: ENCONTRADO
+[01:31:55] Texto claro no pcap -> senha MQTT: ENCONTRADO
+[01:31:55] Texto claro no pcap -> token de API no payload: ENCONTRADO
+[01:31:55] Texto claro no pcap -> MAC: ENCONTRADO
+[01:31:55] Texto claro no pcap -> ID do dispositivo: ENCONTRADO
